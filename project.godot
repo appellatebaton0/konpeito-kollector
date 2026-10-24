@@ -14,6 +14,10 @@ config/name="jame gam"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+TransitionManager="*uid://djf3vismjcx4s"
+
 [display]
 
 window/size/viewport_width=384
@@ -26,8 +30,7 @@ enabled=PackedStringArray("res://addons/godot-hackatime/plugin.cfg", "res://addo
 
 [global_group]
 
-Key=""
-Particle=""
+Konpeito=""
 
 [physics]
 

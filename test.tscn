@@ -5,9 +5,10 @@
 [ext_resource type="Script" uid="uid://fdb036my2ug7" path="res://VelocityField.gd" id="3_6uqi0"]
 [ext_resource type="Texture2D" uid="uid://cprlebl54lon0" path="res://Assets/Textures/Noise.tres" id="3_ykrsh"]
 [ext_resource type="Texture2D" uid="uid://csq7jxgj2p2n1" path="res://Assets/Textures/White.tres" id="4_g14j6"]
-[ext_resource type="Script" uid="uid://c2sgn2kmy0sd8" path="res://Environment.gd" id="4_ppyta"]
 [ext_resource type="Texture2D" uid="uid://uygar8jeagcy" path="res://Environment.png" id="6_vbegm"]
 [ext_resource type="Texture2D" uid="uid://oai0076rw705" path="res://Backdrop.png" id="7_ehkex"]
+[ext_resource type="PackedScene" uid="uid://cb7a36mcurlq6" path="res://Scenes/Konpeito/Konpeito.tscn" id="8_ehkex"]
+[ext_resource type="Script" uid="uid://c2sgn2kmy0sd8" path="res://Scripts/Ground.gd" id="8_xersf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ncx8q"]
 shader = ExtResource("2_8uh7m")
@@ -47,8 +48,6 @@ texture = ExtResource("6_vbegm")
 
 [node name="Soot" parent="." unique_id=1762240322 instance=ExtResource("1_37kl0")]
 position = Vector2(247, 163)
-cast_force = 2300
-cast_exponential = 1.2
 
 [node name="Sprite2D" type="Polygon2D" parent="." unique_id=787253698]
 material = SubResource("ShaderMaterial_ncx8q")
@@ -64,7 +63,7 @@ texture_repeat = 2
 texture = ExtResource("7_ehkex")
 texture_scale = Vector2(4, 4)
 polygon = PackedVector2Array(83, 215, 139, 48, 259, -48, 561, -56, 875, -15, 1076, 126, 1152, 254, 1141, 435, 875, 619, 638, 546, 657, 423, 820, 246, 747, 181, 510, 159, 362, 271, 357, 441, 459, 632, 298, 717, 186, 669, 41, 541, 73, 387, 108, 328, 82, 215, -2, 189, -36, 236, -112, 312, -168, 697, 805, 1004, 1270, 789, 1362, 550, 1290, -82, 634, -266, 37, -170, -150, 318, -5, 187)
-script = ExtResource("4_ppyta")
+script = ExtResource("8_xersf")
 
 [node name="VelocityField" type="Polygon2D" parent="." unique_id=2071780333]
 material = SubResource("ShaderMaterial_g14j6")
@@ -253,3 +252,6 @@ position = Vector2(608, 182.99997)
 rotation = -0.6481698
 color = Color(0.7254902, 0.5686275, 0.85882354, 1)
 polygon = PackedVector2Array(-273.1161, -318.4786, -269.47037, -328.2617, -259.0602, -330.41312, -244.08374, -325.34314, -230.55484, -310.07983, -228.62022, -296.07062, -235.09113, -280.90067, -248.30312, -278.36234, -266.8553, -288.64905, -276.37488, -305.89368)
+
+[node name="Konpeito" parent="." unique_id=1668418300 instance=ExtResource("8_ehkex")]
+position = Vector2(320, 196)
