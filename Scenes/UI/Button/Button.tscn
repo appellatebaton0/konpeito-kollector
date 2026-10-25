@@ -17,10 +17,10 @@ script = ExtResource("1_ccow0")
 
 [node name="Effect" type="Polygon2D" parent="." unique_id=2088864857]
 position = Vector2(-26.786507, 15.755862)
-rotation = 90.04382
+rotation = 123.1259
 polygon = PackedVector2Array(8, 0, 10.392304, 6, 3.9999998, 6.9282036, -5.2453663e-07, 12, -4.0000005, 6.928203, -10.392304, 6.000001, -8, -6.993822e-07, -10.392304, -5.9999995, -3.9999993, -6.9282036, 1.4309856e-07, -12, 3.9999993, -6.9282036, 10.392303, -6.000002)
 script = ExtResource("1_ctkgg")
-outer_rotation = 15.0
+outer_rotation = 30.0
 outer_vertices = 12
 outer_radius = 12.0
 outer_radius_modifiers = Dictionary[int, float]({
@@ -30,10 +30,10 @@ metadata/_custom_type_script = "uid://d1fl7rp5ldrgv"
 
 [node name="Konpeito" type="Polygon2D" parent="." unique_id=969527817]
 position = Vector2(-26.786507, 15.755862)
-rotation = 90.04382
+rotation = 123.1259
 polygon = PackedVector2Array(8, 0, 10.392304, 6, 3.9999998, 6.9282036, -5.2453663e-07, 12, -4.0000005, 6.928203, -10.392304, 6.000001, -8, -6.993822e-07, -10.392304, -5.9999995, -3.9999993, -6.9282036, 1.4309856e-07, -12, 3.9999993, -6.9282036, 10.392303, -6.000002)
 script = ExtResource("1_ctkgg")
-outer_rotation = 15.0
+outer_rotation = 30.0
 outer_vertices = 12
 outer_radius = 12.0
 outer_radius_modifiers = Dictionary[int, float]({

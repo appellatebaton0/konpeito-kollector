@@ -1,88 +1,88 @@
 [gd_scene format=3 uid="uid://b86xjuwt5ks46"]
 
-[ext_resource type="PackedScene" uid="uid://cke1e60nwop6f" path="res://Scenes/Level/LevelBase.tscn" id="1_w4hsy"]
-[ext_resource type="Texture2D" uid="uid://dlkcbmv15dfw5" path="res://Ground.png" id="2_5vgxx"]
-[ext_resource type="Script" uid="uid://c2sgn2kmy0sd8" path="res://Scripts/Ground.gd" id="3_tq884"]
-[ext_resource type="Shader" uid="uid://bse1yq08xkccj" path="res://Wind.gdshader" id="4_3voqd"]
-[ext_resource type="Texture2D" uid="uid://cprlebl54lon0" path="res://Assets/Textures/Noise.tres" id="5_etyke"]
-[ext_resource type="Texture2D" uid="uid://csq7jxgj2p2n1" path="res://Assets/Textures/White.tres" id="6_m0x4f"]
-[ext_resource type="Script" uid="uid://fdb036my2ug7" path="res://VelocityField.gd" id="7_7btio"]
-[ext_resource type="PackedScene" uid="uid://cb7a36mcurlq6" path="res://Scenes/Konpeito/Konpeito.tscn" id="8_iaxmh"]
+[ext_resource type="PackedScene" uid="uid://cke1e60nwop6f" path="res://Scenes/Level/LevelBase.tscn" id="1_muuy2"]
+[ext_resource type="Texture2D" uid="uid://dlkcbmv15dfw5" path="res://Ground.png" id="2_vss1i"]
+[ext_resource type="Script" uid="uid://c2sgn2kmy0sd8" path="res://Scripts/Ground.gd" id="3_jalan"]
+[ext_resource type="Shader" uid="uid://bse1yq08xkccj" path="res://Wind.gdshader" id="4_buu3m"]
+[ext_resource type="Texture2D" uid="uid://cprlebl54lon0" path="res://Assets/Textures/Noise.tres" id="5_k02wp"]
+[ext_resource type="Texture2D" uid="uid://csq7jxgj2p2n1" path="res://Assets/Textures/White.tres" id="6_s6adh"]
+[ext_resource type="Script" uid="uid://fdb036my2ug7" path="res://VelocityField.gd" id="7_7do44"]
+[ext_resource type="PackedScene" uid="uid://cb7a36mcurlq6" path="res://Scenes/Konpeito/Konpeito.tscn" id="8_vee8c"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_h0oyr"]
-shader = ExtResource("4_3voqd")
-shader_parameter/noise = ExtResource("5_etyke")
-shader_parameter/threshold = 0.665
+shader = ExtResource("4_buu3m")
+shader_parameter/noise = ExtResource("5_k02wp")
+shader_parameter/threshold = 0.675
 shader_parameter/velocity = Vector2(1, 2.5)
 shader_parameter/scalar = 2.0
 shader_parameter/mult = Vector2(1, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lg5ax"]
-shader = ExtResource("4_3voqd")
-shader_parameter/noise = ExtResource("5_etyke")
+shader = ExtResource("4_buu3m")
+shader_parameter/noise = ExtResource("5_k02wp")
 shader_parameter/threshold = 0.715
 shader_parameter/velocity = Vector2(-1, -2.5)
 shader_parameter/scalar = 2.0
 shader_parameter/mult = Vector2(1, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cojeo"]
-shader = ExtResource("4_3voqd")
-shader_parameter/noise = ExtResource("5_etyke")
+shader = ExtResource("4_buu3m")
+shader_parameter/noise = ExtResource("5_k02wp")
 shader_parameter/threshold = 0.715
 shader_parameter/velocity = Vector2(0, -3)
 shader_parameter/scalar = 2.0
 shader_parameter/mult = Vector2(1, 1)
 
-[node name="LevelBase" unique_id=719337527 instance=ExtResource("1_w4hsy")]
+[node name="LevelBase" unique_id=719337527 instance=ExtResource("1_muuy2")]
 
 [node name="Ground" type="Polygon2D" parent="." index="3" unique_id=1777014758]
 texture_repeat = 2
-texture = ExtResource("2_5vgxx")
+texture = ExtResource("2_vss1i")
 polygon = PackedVector2Array(-120, -174, -241, 209, -899, 488, -1353, -556, -786, -2249, 1760, -2477, 1923, 1287, -911, 1468, -899, 488, -241, 209, -156, 470, 197, 582, 678, 574, 960, 484, 1096, 137, 911, -184, 1021, -748, 884, -1243, 697, -1277, 586, -1409, 770, -1642, 754, -1921, 369, -2039, 97, -1987, 47, -1629, 289, -1414, 204, -1295, -15, -1253, -162, -718)
-script = ExtResource("3_tq884")
+script = ExtResource("3_jalan")
 metadata/_custom_type_script = "uid://c2sgn2kmy0sd8"
 
 [node name="VelocityField" type="Polygon2D" parent="." index="4" unique_id=1711272233]
 material = SubResource("ShaderMaterial_h0oyr")
 color = Color(0.8509804, 0.83137256, 0.84705883, 0.8235294)
-texture = ExtResource("6_m0x4f")
+texture = ExtResource("6_s6adh")
 polygon = PackedVector2Array(-53, -114, 22, 90, 182, 95, 270, -113, 230, -846, 340, -1062, 298, -1143, 207, -1178, 102, -1132, -60, -877)
-script = ExtResource("7_7btio")
+script = ExtResource("7_7do44")
 velocity = Vector2(1, 2.5)
 metadata/_custom_type_script = "uid://fdb036my2ug7"
 
 [node name="VelocityField2" type="Polygon2D" parent="." index="5" unique_id=1764953364]
 material = SubResource("ShaderMaterial_lg5ax")
 color = Color(0.8509804, 0.83137256, 0.84705883, 0.8235294)
-texture = ExtResource("6_m0x4f")
+texture = ExtResource("6_s6adh")
 polygon = PackedVector2Array(514, -1027, 519, -1117, 612, -1183, 699, -1150, 841, -912, 871, -189, 752, 60, 612, 70, 529, -108, 569, -829)
-script = ExtResource("7_7btio")
+script = ExtResource("7_7do44")
 velocity = Vector2(-1, -2.5)
 metadata/_custom_type_script = "uid://fdb036my2ug7"
 
 [node name="VelocityField3" type="Polygon2D" parent="." index="6" unique_id=789848545]
 material = SubResource("ShaderMaterial_cojeo")
 color = Color(0.8509804, 0.83137256, 0.84705883, 0.8235294)
-texture = ExtResource("6_m0x4f")
+texture = ExtResource("6_s6adh")
 polygon = PackedVector2Array(-97, 239, -125, 406, 190, 493, 666, 487, 950, 378, 904, 217, 599, 319, 256, 324)
-script = ExtResource("7_7btio")
+script = ExtResource("7_7do44")
 velocity = Vector2(0, -3)
 metadata/_custom_type_script = "uid://fdb036my2ug7"
 
-[node name="Konpeito" parent="." index="7" unique_id=1668418300 instance=ExtResource("8_iaxmh")]
+[node name="Konpeito" parent="." index="7" unique_id=1668418300 instance=ExtResource("8_vee8c")]
 position = Vector2(405, 217)
 
-[node name="Konpeito2" parent="." index="8" unique_id=1962756697 instance=ExtResource("8_iaxmh")]
+[node name="Konpeito2" parent="." index="8" unique_id=1962756697 instance=ExtResource("8_vee8c")]
 position = Vector2(944, 92)
 
-[node name="Konpeito4" parent="." index="9" unique_id=1874150292 instance=ExtResource("8_iaxmh")]
+[node name="Konpeito4" parent="." index="9" unique_id=1874150292 instance=ExtResource("8_vee8c")]
 position = Vector2(427, -1347)
 
-[node name="Konpeito5" parent="." index="10" unique_id=655567211 instance=ExtResource("8_iaxmh")]
+[node name="Konpeito5" parent="." index="10" unique_id=655567211 instance=ExtResource("8_vee8c")]
 position = Vector2(225, -1776)
 
-[node name="Konpeito6" parent="." index="11" unique_id=1452820134 instance=ExtResource("8_iaxmh")]
+[node name="Konpeito6" parent="." index="11" unique_id=1452820134 instance=ExtResource("8_vee8c")]
 position = Vector2(667, -844)
 
-[node name="Konpeito7" parent="." index="12" unique_id=842987855 instance=ExtResource("8_iaxmh")]
+[node name="Konpeito7" parent="." index="12" unique_id=842987855 instance=ExtResource("8_vee8c")]
 position = Vector2(413, -511)

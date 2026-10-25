@@ -35,7 +35,7 @@ func _physics_process(_delta: float) -> void:
 		
 		var dir := point.direction_to(global_position)
 		
-		var force := (cast_range - (global_position.distance_to(point))) ** cast_exponential
+		var force := (cast_range - (global_position.distance_to(point))) ** (cast_exponential + (velocity.distance_to(Vector2.ZERO) / 1400.0))
 		#print(force)
 		
 		velocity += dir * force / cast_force
@@ -61,10 +61,10 @@ func _input(event: InputEvent) -> void:
 		
 	elif event.is_action_pressed("Down"):
 		
-		if velocity.distance_to(Vector2.ZERO) < 30.0:
+		if velocity.distance_to(Vector2.ZERO) < 50.0:
 			return
 		
-		velocity /= 1.05
+		velocity /= 1.07
 
 #func _draw() -> void:
 	#

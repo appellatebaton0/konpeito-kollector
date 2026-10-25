@@ -25,3 +25,7 @@ func update() -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel") and visible:
 		TransitionManager.transition("res://Scenes/UI/LevelSelect/LevelSelect.tscn")
+
+func play_click_sfx(override_stream :AudioStream = preload("res://Assets/Music/MenuSelect.wav")) -> void:
+	$MarginContainer/Button2/AudioStreamPlayer.play()
+	

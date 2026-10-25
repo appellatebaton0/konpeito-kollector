@@ -28,6 +28,9 @@ func _body_entered(body :Node) -> void:
 	
 	if body is Soot:
 		
+		if collected: return
+		
+		
 		if tween and tween.is_running():
 			tween.kill()
 		
@@ -40,9 +43,16 @@ func _body_entered(body :Node) -> void:
 		
 		HUD.update()
 		
+		$Pickup.play()
+		$Pickup.finished.connect($Pickup.queue_free)
+		$Pickup.reparent(get_viewport())
+		
 		## Complete level if all collected.
 		if all_collected():
 			TransitionManager.transition("res://Scenes/UI/LevelSelect/LevelSelect.tscn")
+			
+			
+		
 
 func all_collected() -> bool:
 	

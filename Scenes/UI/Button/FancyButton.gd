@@ -12,6 +12,8 @@ func _ready() -> void:
 	focus_entered.connect(_selected)
 	focus_exited.connect(_deselected)
 	
+	pressed.connect(HUD.play_click_sfx)
+	
 	_deselected()
 
 func _selected() -> void:

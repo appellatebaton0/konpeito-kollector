@@ -5,10 +5,12 @@ interpolation_mode = 2
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_6uqi0"]
 noise_type = 3
-seed = 4
-frequency = 0.0077
+seed = 14
+frequency = 0.0347
 
 [resource]
+width = 256
+height = 256
 generate_mipmaps = false
 noise = SubResource("FastNoiseLite_6uqi0")
 color_ramp = SubResource("Gradient_ppyta")

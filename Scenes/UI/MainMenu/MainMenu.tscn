@@ -80,6 +80,7 @@ layout_mode = 2
 text = "options"
 
 [node name="Quit" parent="MarginContainer/PanelContainer/VBoxContainer2/VBoxContainer" unique_id=1454241644 instance=ExtResource("2_7rqq1")]
+visible = false
 layout_mode = 2
 text = "quit
 "

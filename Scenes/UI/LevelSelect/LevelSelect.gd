@@ -11,6 +11,7 @@ func _ready() -> void:
 	load_buttons()
 
 func to_main() -> void:
+	HUD.play_click_sfx()
 	TransitionManager.transition("res://Scenes/UI/MainMenu/MainMenu.tscn")
 
 

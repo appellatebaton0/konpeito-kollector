@@ -1,10 +1,16 @@
 [gd_scene format=3 uid="uid://cb7a36mcurlq6"]
 
 [ext_resource type="Script" uid="uid://d1uvulkxguoir" path="res://Scenes/Konpeito/Konpeito.gd" id="1_3akli"]
+[ext_resource type="AudioStream" uid="uid://t23gjjooayy8" path="res://Assets/SFX/Pickup.wav" id="2_fdik7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ncx8q"]
 radius = 30.818298
 height = 78.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_dhcmq"]
+random_pitch = 1.0594631
+streams_count = 1
+stream_0/stream = ExtResource("2_fdik7")
 
 [node name="Konpeito" type="Area2D" unique_id=1668418300 groups=["Konpeito"]]
 script = ExtResource("1_3akli")
@@ -28,3 +34,7 @@ polygon = PackedVector2Array(-8.999998, -17.320673, -9.51422, -17.556114, -9.380
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=856580493]
 scale = Vector2(0.9734476, 1)
 shape = SubResource("CapsuleShape2D_ncx8q")
+
+[node name="Pickup" type="AudioStreamPlayer" parent="." unique_id=898228094]
+stream = SubResource("AudioStreamRandomizer_dhcmq")
+volume_db = 3.0

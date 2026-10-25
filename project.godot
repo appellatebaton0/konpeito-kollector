@@ -13,6 +13,8 @@ config_version=5
 config/name="jame gam"
 run/main_scene="uid://c8b2vuf4dn5ya"
 config/features=PackedStringArray("4.7", "Forward Plus")
+boot_splash/bg_color=Color(0.4509804, 0.37254903, 0.69411767, 1)
+boot_splash/show_image=false
 config/icon="res://icon.svg"
 
 [autoload]
@@ -62,4 +64,7 @@ Down={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

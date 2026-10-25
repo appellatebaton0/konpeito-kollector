@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dn2sf268cvhlk"]
 
 [ext_resource type="Script" uid="uid://b7iep6krx8fav" path="res://Scenes/UI/UI/HUD.gd" id="1_w564t"]
+[ext_resource type="AudioStream" uid="uid://0td11oe6hka0" path="res://Assets/Music/MenuSelect.wav" id="2_2h8f3"]
 
 [node name="HUD" type="CanvasLayer" unique_id=1360787566]
 script = ExtResource("1_w564t")
@@ -40,3 +41,9 @@ width = 3.0
 joint_mode = 2
 begin_cap_mode = 2
 end_cap_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MarginContainer/Button2" unique_id=819994041]
+stream = ExtResource("2_2h8f3")
+volume_db = -3.0
+
+[connection signal="pressed" from="MarginContainer/Button2" to="MarginContainer/Button2/AudioStreamPlayer" method="play"]
