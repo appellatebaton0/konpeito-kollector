@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://dalqmi6337lry"]
+
+[ext_resource type="Script" uid="uid://cvjbdelxoksiv" path="res://Scenes/UI/LevelSelect/LevelSelect.gd" id="1_25pru"]
+[ext_resource type="PackedScene" uid="uid://dmp6m5nbl82de" path="res://Scenes/UI/Button/Button.tscn" id="1_nepms"]
+
+[node name="LevelSelect" type="ColorRect" unique_id=749606140]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.25490198, 0.3647059, 0.6, 1)
+script = ExtResource("1_25pru")
+
+[node name="Button" parent="." unique_id=1921407024 instance=ExtResource("1_nepms")]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 147.0
+offset_right = 246.0
+offset_bottom = 179.0
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2095517739]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 35
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer" unique_id=1351594404]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="." unique_id=2036416555]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 7
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_right = 7
+theme_override_constants/margin_bottom = 7
+
+[node name="Label" type="Label" parent="MarginContainer2" unique_id=1979925396]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "// -  level  selection  - \\\\"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="MarginContainer2" unique_id=1864230016]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+flat = true
+
+[node name="Line2D" type="Line2D" parent="MarginContainer2/Button2" unique_id=1096608138]
+position = Vector2(3.0000002, 2)
+scale = Vector2(0.67885923, 0.67885923)
+points = PackedVector2Array(25, 15, 16.204, 15.516, 3, 15, 11, 8, 14, 6, 11, 8, 3, 15, 9, 21, 14, 25)
+width = 3.0
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
