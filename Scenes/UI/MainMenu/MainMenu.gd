@@ -1,7 +1,7 @@
 extends ColorRect
 
-@onready var start := $MarginContainer/VBoxContainer/Start
-@onready var quitter := $MarginContainer/VBoxContainer/Quit
+@onready var start := $MarginContainer/PanelContainer/VBoxContainer2/VBoxContainer/Start
+@onready var quitter := $MarginContainer/PanelContainer/VBoxContainer2/VBoxContainer/Quit
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -10,7 +10,7 @@ func _ready() -> void:
 	quitter.pressed.connect(quit)
 
 func to_levels() -> void:
-	TransitionManager.transition(preload("res://Scenes/UI/LevelSelect/LevelSelect.tscn"))
+	TransitionManager.transition("res://Scenes/UI/LevelSelect/LevelSelect.tscn")
 
 func quit() -> void:
 	get_tree().quit()

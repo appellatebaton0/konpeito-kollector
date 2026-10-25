@@ -3,13 +3,20 @@ extends CanvasLayer
 
 @onready var anim_player := $AnimationPlayer
 
-func transition(to :PackedScene) -> void:
-	anim_player.play("Transition")
+func transition(to :Variant) -> void:
+	anim_player.play("TransitionIn")
 	
 	await anim_player.animation_finished
 	
-	print("transition to ", to)
-	get_tree().change_scene_to_packed(to)
+	if to is Node:
+		get_tree().change_scene_to_node(to)
+	elif to is PackedScene:
+		get_tree().change_scene_to_packed(to)
+	elif to is String:
+		get_tree().change_scene_to_file(to)
 	
-	anim_player.play("Transition", -1, -1, true)
+	anim_player.play("TransitionOut")
+	
+	await get_tree().scene_changed
+	HUD.update()
 	
