@@ -2,9 +2,15 @@
 
 [ext_resource type="Script" uid="uid://b34xsx23xp8o" path="res://Scenes/Soot/Soot.gd" id="1_5fsy5"]
 [ext_resource type="Script" uid="uid://ctwi123pgoeco" path="res://Scripts/RegularPolygon.gd" id="2_lhvmn"]
+[ext_resource type="AudioStream" uid="uid://by5o7e6jowxcs" path="res://Assets/SFX/Wind.wav" id="3_lhvmn"]
+[ext_resource type="Script" uid="uid://jca3lltpqwxp" path="res://Scripts/Trail.gd" id="4_ctwd5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dhcmq"]
 radius = 12.0
+
+[sub_resource type="Curve" id="Curve_1pscb"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.37848604, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [node name="Soot" type="CharacterBody2D" unique_id=1762240322]
 z_index = 5
@@ -14,6 +20,93 @@ cast_exponential = 1.2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=369733881]
 shape = SubResource("CircleShape2D_dhcmq")
+
+[node name="WindTrail" type="CanvasGroup" parent="." unique_id=802592278]
+self_modulate = Color(1, 1, 1, 0.56078434)
+
+[node name="Trail" type="Line2D" parent="WindTrail" unique_id=1624116907]
+texture_repeat = 2
+position = Vector2(1.6397114, 0)
+points = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+width = 3.0
+width_curve = SubResource("Curve_1pscb")
+default_color = Color(0.8509804, 0.83137256, 0.84705883, 1)
+script = ExtResource("4_ctwd5")
+trail_segments = 7
+follow_speed = 15.0
+metadata/_custom_type_script = "uid://jca3lltpqwxp"
+
+[node name="Trail2" type="Line2D" parent="WindTrail" unique_id=1425154293]
+texture_repeat = 2
+position = Vector2(-5.3602886, -4)
+points = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+width = 3.0
+width_curve = SubResource("Curve_1pscb")
+default_color = Color(0.8509804, 0.83137256, 0.84705883, 1)
+script = ExtResource("4_ctwd5")
+trail_segments = 7
+follow_speed = 15.0
+metadata/_custom_type_script = "uid://jca3lltpqwxp"
+
+[node name="Trail3" type="Line2D" parent="WindTrail" unique_id=2135409652]
+texture_repeat = 2
+position = Vector2(3.6397114, -9)
+points = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+width = 3.0
+width_curve = SubResource("Curve_1pscb")
+default_color = Color(0.8509804, 0.83137256, 0.84705883, 1)
+script = ExtResource("4_ctwd5")
+trail_segments = 7
+follow_speed = 15.0
+metadata/_custom_type_script = "uid://jca3lltpqwxp"
+
+[node name="Trail4" type="Line2D" parent="WindTrail" unique_id=1333790759]
+texture_repeat = 2
+position = Vector2(8.639711, 6)
+points = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+width = 3.0
+width_curve = SubResource("Curve_1pscb")
+default_color = Color(0.8509804, 0.83137256, 0.84705883, 1)
+script = ExtResource("4_ctwd5")
+trail_segments = 7
+follow_speed = 15.0
+metadata/_custom_type_script = "uid://jca3lltpqwxp"
+
+[node name="Trail6" type="Line2D" parent="WindTrail" unique_id=722628565]
+texture_repeat = 2
+position = Vector2(-7, 3)
+points = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+width = 3.0
+width_curve = SubResource("Curve_1pscb")
+default_color = Color(0.8509804, 0.83137256, 0.84705883, 1)
+script = ExtResource("4_ctwd5")
+trail_segments = 7
+follow_speed = 15.0
+metadata/_custom_type_script = "uid://jca3lltpqwxp"
+
+[node name="Trail7" type="Line2D" parent="WindTrail" unique_id=574202067]
+texture_repeat = 2
+position = Vector2(8, -3)
+points = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+width = 3.0
+width_curve = SubResource("Curve_1pscb")
+default_color = Color(0.8509804, 0.83137256, 0.84705883, 1)
+script = ExtResource("4_ctwd5")
+trail_segments = 7
+follow_speed = 15.0
+metadata/_custom_type_script = "uid://jca3lltpqwxp"
+
+[node name="Trail5" type="Line2D" parent="WindTrail" unique_id=411446105]
+texture_repeat = 2
+position = Vector2(-2.3602886, 8)
+points = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+width = 3.0
+width_curve = SubResource("Curve_1pscb")
+default_color = Color(0.8509804, 0.83137256, 0.84705883, 1)
+script = ExtResource("4_ctwd5")
+trail_segments = 7
+follow_speed = 15.0
+metadata/_custom_type_script = "uid://jca3lltpqwxp"
 
 [node name="Sprite" type="Polygon2D" parent="." unique_id=1839741138]
 scale = Vector2(0.3, 0.3)
@@ -122,3 +215,7 @@ script = ExtResource("2_lhvmn")
 outer_vertices = 16
 outer_radius = 4.0
 metadata/_custom_type_script = "uid://ctwi123pgoeco"
+
+[node name="Wind" type="AudioStreamPlayer" parent="." unique_id=551047407]
+stream = ExtResource("3_lhvmn")
+autoplay = true
