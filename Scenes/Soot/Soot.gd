@@ -44,22 +44,36 @@ func _physics_process(_delta: float) -> void:
 	
 	$Sprite.rotate(velocity.distance_to(Vector2.ZERO) * 0.0003 * signf(velocity.x))
 	
-	queue_redraw()
+	#queue_redraw()
 	
 	move_and_slide()
 
-func _draw() -> void:
+func _input(event: InputEvent) -> void:
 	
-	for cast in casts:
+	if event.is_action_pressed("Up"):
 		
-		if not cast.is_colliding(): 
-			
-			draw_circle(cast.target_position, 2.0, Color.BLUE)
-			
-			continue
+		var dir := velocity.normalized()
 		
-		var point := cast.get_collision_point()
+		velocity += dir * 10.0
+	elif event.is_action_pressed("Down"):
 		
-		draw_circle(point - position, 2.0, Color.RED)
+		if velocity.distance_to(Vector2.ZERO) < 30.0:
+			return
+		
+		velocity /= 1.05
+
+#func _draw() -> void:
+	#
+	#for cast in casts:
+		#
+		#if not cast.is_colliding(): 
+			#
+			#draw_circle(cast.target_position, 2.0, Color.BLUE)
+			#
+			#continue
+		#
+		#var point := cast.get_collision_point()
+		#
+		#draw_circle(point - position, 2.0, Color.RED)
 
 	

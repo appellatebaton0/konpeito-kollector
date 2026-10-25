@@ -122,5 +122,3 @@ script = ExtResource("2_lhvmn")
 outer_vertices = 16
 outer_radius = 4.0
 metadata/_custom_type_script = "uid://ctwi123pgoeco"
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=2038326964]

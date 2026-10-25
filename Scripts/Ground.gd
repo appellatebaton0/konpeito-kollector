@@ -1,3 +1,4 @@
+@tool
 class_name Ground extends Polygon2D
 ## An environment polygon that makes its own collision.
 
@@ -6,8 +7,15 @@ var _staticbody :StaticBody2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
+	texture = preload("res://Ground.png")
+	texture_repeat = CanvasItem.TEXTURE_REPEAT_ENABLED
+	
+	if Engine.is_editor_hint(): return
+	
+	z_index = 3
+	
 	## Smooth out the corners of the polygon.
-
+	
 	polygon = round_polygon(polygon)
 	
 	## Make the collider.

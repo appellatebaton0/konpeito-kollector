@@ -3,7 +3,8 @@ shader_type canvas_item;
 uniform sampler2D noise;
 uniform float threshold = 0.715;
 uniform vec2 velocity = vec2(1.0);
-uniform float scalar = 5.0;
+uniform float scalar = 2.0;
+uniform vec2 mult = vec2(1.0);
 
 void vertex() {
 	// Called for every vertex the material is visible on.
@@ -11,7 +12,9 @@ void vertex() {
 
 void fragment() {
 	
-	float value = texture(noise, mod(UV + (TIME * -velocity / scalar), 1.0)).r;
+	vec2 new_uv = mod((UV * mult) + (TIME * -velocity / scalar), mult) / mult;
+	
+	float value = texture(noise, new_uv).r;
 	
 	if (value <= threshold)
 	{
