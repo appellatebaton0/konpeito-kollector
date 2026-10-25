@@ -5,6 +5,8 @@ extends CanvasLayer
 func _ready() -> void:
 	update()
 	
+	$MarginContainer/Button2.pressed.connect(TransitionManager.transition.bind("res://Scenes/UI/LevelSelect/LevelSelect.tscn"))
+	
 func update() -> void:
 	
 	visible = get_tree().current_scene.name == "LevelBase"
@@ -19,3 +21,7 @@ func update() -> void:
 			collected += 1
 	
 	$MarginContainer/Label.text = str(collected) + " / " + str(total)
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel") and visible:
+		TransitionManager.transition("res://Scenes/UI/LevelSelect/LevelSelect.tscn")

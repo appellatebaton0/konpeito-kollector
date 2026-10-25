@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 TransitionManager="*uid://djf3vismjcx4s"
 HUD="*uid://dn2sf268cvhlk"
+Music="*uid://c5qtvrimglhwc"
 
 [display]
 

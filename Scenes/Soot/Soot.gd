@@ -44,7 +44,7 @@ func _physics_process(_delta: float) -> void:
 	
 	$Sprite.rotate(velocity.distance_to(Vector2.ZERO) * 0.0003 * signf(velocity.x))
 	
-	#queue_redraw()
+	$Wind.volume_linear = clampf(velocity.distance_to(Vector2.ZERO) / 450.0, 0.0, 1.0)
 	
 	move_and_slide()
 
@@ -54,7 +54,11 @@ func _input(event: InputEvent) -> void:
 		
 		var dir := velocity.normalized()
 		
+		if velocity.distance_to(Vector2.ZERO) > 450.0:
+			return
+		
 		velocity += dir * 10.0
+		
 	elif event.is_action_pressed("Down"):
 		
 		if velocity.distance_to(Vector2.ZERO) < 30.0:
