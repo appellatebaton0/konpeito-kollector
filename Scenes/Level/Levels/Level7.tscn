@@ -1,0 +1,197 @@
+[gd_scene format=3 uid="uid://bynuhkyhseadn"]
+
+[ext_resource type="PackedScene" uid="uid://cke1e60nwop6f" path="res://Scenes/Level/LevelBase.tscn" id="1_w4hsy"]
+[ext_resource type="Texture2D" uid="uid://dlkcbmv15dfw5" path="res://Ground.png" id="2_5vgxx"]
+[ext_resource type="Script" uid="uid://c2sgn2kmy0sd8" path="res://Scripts/Ground.gd" id="3_tq884"]
+[ext_resource type="Shader" uid="uid://bse1yq08xkccj" path="res://Wind.gdshader" id="4_3voqd"]
+[ext_resource type="Texture2D" uid="uid://cprlebl54lon0" path="res://Assets/Textures/Noise.tres" id="5_etyke"]
+[ext_resource type="Texture2D" uid="uid://csq7jxgj2p2n1" path="res://Assets/Textures/White.tres" id="6_m0x4f"]
+[ext_resource type="Script" uid="uid://fdb036my2ug7" path="res://VelocityField.gd" id="7_7btio"]
+[ext_resource type="PackedScene" uid="uid://cb7a36mcurlq6" path="res://Scenes/Konpeito/Konpeito.tscn" id="8_iaxmh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_muuy2"]
+shader = ExtResource("4_3voqd")
+shader_parameter/noise = ExtResource("5_etyke")
+shader_parameter/threshold = 0.715
+shader_parameter/velocity = Vector2(4, 4)
+shader_parameter/scalar = 2.0
+shader_parameter/mult = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vss1i"]
+shader = ExtResource("4_3voqd")
+shader_parameter/noise = ExtResource("5_etyke")
+shader_parameter/threshold = 0.715
+shader_parameter/velocity = Vector2(-4, -2)
+shader_parameter/scalar = 2.0
+shader_parameter/mult = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jalan"]
+shader = ExtResource("4_3voqd")
+shader_parameter/noise = ExtResource("5_etyke")
+shader_parameter/threshold = 0.715
+shader_parameter/velocity = Vector2(-4, -2)
+shader_parameter/scalar = 2.0
+shader_parameter/mult = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_buu3m"]
+shader = ExtResource("4_3voqd")
+shader_parameter/noise = ExtResource("5_etyke")
+shader_parameter/threshold = 0.715
+shader_parameter/velocity = Vector2(4, 0)
+shader_parameter/scalar = 2.0
+shader_parameter/mult = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k02wp"]
+shader = ExtResource("4_3voqd")
+shader_parameter/noise = ExtResource("5_etyke")
+shader_parameter/threshold = 0.715
+shader_parameter/velocity = Vector2(3, -3)
+shader_parameter/scalar = 2.0
+shader_parameter/mult = Vector2(1, 1)
+
+[node name="LevelBase" unique_id=719337527 instance=ExtResource("1_w4hsy")]
+
+[node name="Ground" type="Polygon2D" parent="." index="3" unique_id=1274793042]
+texture_repeat = 2
+texture = ExtResource("2_5vgxx")
+polygon = PackedVector2Array(-224, 213, -411, -194, -1590, -132, -1963, 1656, 3093, 1336, 3146, -2512, -1708, -1938, -1590, -132, -411, -194, -408, -685, -131, -1061, 439, -1162, 912, -1061, 1429, -798, 1599, -438, 1587, 75, 1260, 322, 856, 426, 467, 377, 139.97656, 375.97473)
+script = ExtResource("3_tq884")
+metadata/_custom_type_script = "uid://c2sgn2kmy0sd8"
+
+[node name="Ground2" type="Polygon2D" parent="." index="4" unique_id=482966614]
+texture_repeat = 2
+texture = ExtResource("2_5vgxx")
+polygon = PackedVector2Array(46, -414, 45, -491, 150, -527, 265, -486, 382, -550, 453, -508, 483, -433, 368, -355, 404, -231, 317, -186, 225, -216, 183, -341)
+script = ExtResource("3_tq884")
+metadata/_custom_type_script = "uid://c2sgn2kmy0sd8"
+
+[node name="Ground3" type="Polygon2D" parent="." index="5" unique_id=167893150]
+texture_repeat = 2
+position = Vector2(762.00006, 193)
+rotation = 0.1551911
+texture = ExtResource("2_5vgxx")
+polygon = PackedVector2Array(368, -416, 355.96967, -597.199, 446.5152, -658.9364, 530.13654, -603.1918, 549, -425, 528, -327, 387.63983, -161.86232, 295.01178, -171.66267, 264.4261, -270.11832)
+script = ExtResource("3_tq884")
+metadata/_custom_type_script = "uid://c2sgn2kmy0sd8"
+
+[node name="VelocityField" type="Polygon2D" parent="." index="6" unique_id=1855894336]
+material = SubResource("ShaderMaterial_muuy2")
+color = Color(0.8509804, 0.83137256, 0.84705883, 0.8235294)
+texture = ExtResource("6_m0x4f")
+polygon = PackedVector2Array(354, -524, 1111, -1028, 1236, -948, 453, -418)
+script = ExtResource("7_7btio")
+velocity = Vector2(4, 4)
+metadata/_custom_type_script = "uid://fdb036my2ug7"
+
+[node name="VelocityField2" type="Polygon2D" parent="." index="7" unique_id=1125252248]
+material = SubResource("ShaderMaterial_vss1i")
+position = Vector2(28, 44)
+color = Color(0.8509804, 0.83137256, 0.84705883, 0.8235294)
+texture = ExtResource("6_m0x4f")
+polygon = PackedVector2Array(1184, -375, 1231, -1005, 1371, -991, 1345, -351)
+script = ExtResource("7_7btio")
+velocity = Vector2(-4, -2)
+metadata/_custom_type_script = "uid://fdb036my2ug7"
+
+[node name="VelocityField3" type="Polygon2D" parent="." index="8" unique_id=1608794799]
+material = SubResource("ShaderMaterial_jalan")
+color = Color(0.8509804, 0.83137256, 0.84705883, 0.8235294)
+texture = ExtResource("6_m0x4f")
+polygon = PackedVector2Array(218, -249, 403, -233, 607, 537, 396, 562)
+script = ExtResource("7_7btio")
+velocity = Vector2(-4, -2)
+metadata/_custom_type_script = "uid://fdb036my2ug7"
+
+[node name="VelocityField4" type="Polygon2D" parent="." index="9" unique_id=1984268344]
+material = SubResource("ShaderMaterial_buu3m")
+color = Color(0.8509804, 0.83137256, 0.84705883, 0.8235294)
+texture = ExtResource("6_m0x4f")
+polygon = PackedVector2Array(1070, -40, 645, 474, 837, 482, 1201, 56)
+script = ExtResource("7_7btio")
+velocity = Vector2(4, 0)
+metadata/_custom_type_script = "uid://fdb036my2ug7"
+
+[node name="VelocityField5" type="Polygon2D" parent="." index="10" unique_id=387464961]
+material = SubResource("ShaderMaterial_k02wp")
+color = Color(0.8509804, 0.83137256, 0.84705883, 0.8235294)
+texture = ExtResource("6_m0x4f")
+polygon = PackedVector2Array(58, -418, -465, -621, -418, -771, 154, -521)
+script = ExtResource("7_7btio")
+velocity = Vector2(3, -3)
+metadata/_custom_type_script = "uid://fdb036my2ug7"
+
+[node name="Ground4" type="Polygon2D" parent="." index="11" unique_id=1083911722]
+texture_repeat = 2
+position = Vector2(91, 92)
+texture = ExtResource("2_5vgxx")
+polygon = PackedVector2Array(-193, -76, -272, -164, -279, -278, -207, -339, -96, -346, -9, -278, -2, -159, -84, -82)
+script = ExtResource("3_tq884")
+metadata/_custom_type_script = "uid://c2sgn2kmy0sd8"
+
+[node name="Ground5" type="Polygon2D" parent="." index="12" unique_id=462315828]
+texture_repeat = 2
+position = Vector2(1079, -184)
+texture = ExtResource("2_5vgxx")
+polygon = PackedVector2Array(-193, -76, -272, -164, -279, -278, -207, -339, -96, -346, -9, -278, -2, -159, -84, -82)
+script = ExtResource("3_tq884")
+metadata/_custom_type_script = "uid://c2sgn2kmy0sd8"
+
+[node name="Ground6" type="Polygon2D" parent="." index="13" unique_id=791808883]
+texture_repeat = 2
+position = Vector2(864, 184)
+texture = ExtResource("2_5vgxx")
+polygon = PackedVector2Array(-174, -74, -247, -129, -250, -215, -206, -275, -114, -278, -52, -190, -88, -105)
+script = ExtResource("3_tq884")
+metadata/_custom_type_script = "uid://c2sgn2kmy0sd8"
+
+[node name="Ground7" type="Polygon2D" parent="." index="14" unique_id=319629823]
+texture_repeat = 2
+position = Vector2(193, -623)
+texture = ExtResource("2_5vgxx")
+polygon = PackedVector2Array(-174, -74, -247, -129, -250, -215, -206, -275, -114, -278, -52, -190, -88, -105)
+script = ExtResource("3_tq884")
+metadata/_custom_type_script = "uid://c2sgn2kmy0sd8"
+
+[node name="Ground8" type="Polygon2D" parent="." index="15" unique_id=1028827869]
+texture_repeat = 2
+position = Vector2(699, -727)
+texture = ExtResource("2_5vgxx")
+polygon = PackedVector2Array(-243, -41, -333, -120, -319, -234, -230, -290, -114, -278, -43, -186, -59, -95, -115, -55)
+script = ExtResource("3_tq884")
+metadata/_custom_type_script = "uid://c2sgn2kmy0sd8"
+
+[node name="Konpeito" parent="." index="16" unique_id=1668418300 instance=ExtResource("8_iaxmh")]
+position = Vector2(66, -306)
+
+[node name="Konpeito2" parent="." index="17" unique_id=1881160124 instance=ExtResource("8_iaxmh")]
+position = Vector2(-40, -989)
+
+[node name="Konpeito3" parent="." index="18" unique_id=573370761 instance=ExtResource("8_iaxmh")]
+position = Vector2(569, -567)
+
+[node name="Konpeito4" parent="." index="19" unique_id=1207101330 instance=ExtResource("8_iaxmh")]
+position = Vector2(1136, -315)
+
+[node name="Konpeito5" parent="." index="20" unique_id=647129106 instance=ExtResource("8_iaxmh")]
+position = Vector2(694, -246)
+
+[node name="Konpeito6" parent="." index="21" unique_id=894396676 instance=ExtResource("8_iaxmh")]
+position = Vector2(668, 265)
+
+[node name="Konpeito7" parent="." index="22" unique_id=1448918414 instance=ExtResource("8_iaxmh")]
+position = Vector2(1482, -270)
+
+[node name="Konpeito8" parent="." index="23" unique_id=528480089 instance=ExtResource("8_iaxmh")]
+position = Vector2(1242, 229)
+
+[node name="Konpeito9" parent="." index="24" unique_id=456016516 instance=ExtResource("8_iaxmh")]
+position = Vector2(-228, 9)
+
+[node name="Konpeito10" parent="." index="25" unique_id=1387659246 instance=ExtResource("8_iaxmh")]
+position = Vector2(544, -1060)
+
+[node name="Konpeito11" parent="." index="26" unique_id=1148501317 instance=ExtResource("8_iaxmh")]
+position = Vector2(259, -689)
+
+[node name="Konpeito12" parent="." index="27" unique_id=482742499 instance=ExtResource("8_iaxmh")]
+position = Vector2(179, 304)

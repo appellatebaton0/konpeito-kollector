@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://8jpr6yg1f1hk"]
+
+[ext_resource type="PackedScene" uid="uid://cke1e60nwop6f" path="res://Scenes/Level/LevelBase.tscn" id="1_aaw2u"]
+[ext_resource type="Texture2D" uid="uid://dlkcbmv15dfw5" path="res://Ground.png" id="2_du7qk"]
+[ext_resource type="Script" uid="uid://c2sgn2kmy0sd8" path="res://Scripts/Ground.gd" id="2_khuj7"]
+[ext_resource type="PackedScene" uid="uid://cb7a36mcurlq6" path="res://Scenes/Konpeito/Konpeito.tscn" id="4_o3puh"]
+
+[node name="LevelBase" unique_id=719337527 instance=ExtResource("1_aaw2u")]
+
+[node name="Ground" type="Polygon2D" parent="." index="3" unique_id=270954184]
+texture_repeat = 2
+texture = ExtResource("2_du7qk")
+polygon = PackedVector2Array(494, 399, 615, 264, 629, 139, 563, 30, 454, -37, 472, -322, 443, -574, 497, -723, 664, -766, 928, -866, 1073, -901, 1041, -627, 1050, -520, 856, -503, 664, -473, 601, -354, 641, -175, 805, -133, 913, -190, 941, -259, 982, -392, 1062, -395, 1081, -326, 1060, -56, 1196, -46, 1230, -520, 1194, -984, 1225, -1152, 1082, -1341, 840, -1355, 647, -1304, 626, -1167, 655, -1011, 395, -944, 227.93765, -931.00616, 114, -832, 76, -408, 90, -90, -42, 51, -114, 188, -85, 349, 53, 459, 291, 470, 494, 399, 1076, 751, 374, 1118, -767, 948, -759, 403, -857, -1618, 1958, -1635, 2155, 817, 1076, 751)
+script = ExtResource("2_khuj7")
+metadata/_custom_type_script = "uid://c2sgn2kmy0sd8"
+
+[node name="Konpeito" parent="." index="4" unique_id=1668418300 instance=ExtResource("4_o3puh")]
+position = Vector2(122, 303)
+
+[node name="Konpeito2" parent="." index="5" unique_id=1403982535 instance=ExtResource("4_o3puh")]
+position = Vector2(292, -408)
+
+[node name="Konpeito3" parent="." index="6" unique_id=534681309 instance=ExtResource("4_o3puh")]
+position = Vector2(573, -840)
+
+[node name="Konpeito4" parent="." index="7" unique_id=2092316649 instance=ExtResource("4_o3puh")]
+position = Vector2(905, -1196)
+
+[node name="Konpeito5" parent="." index="8" unique_id=988743694 instance=ExtResource("4_o3puh")]
+position = Vector2(787, -312)
+
+[node name="Konpeito6" parent="." index="9" unique_id=1708408799 instance=ExtResource("4_o3puh")]
+position = Vector2(1138, -115)

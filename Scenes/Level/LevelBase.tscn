@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cke1e60nwop6f"]
+
+[ext_resource type="Texture2D" uid="uid://bvfja4wk5awdr" path="res://Backdrop.png" id="1_fs2k4"]
+[ext_resource type="PackedScene" uid="uid://dfrvycf6w3lbn" path="res://Scenes/Soot/Soot.tscn" id="2_8xgkp"]
+[ext_resource type="Script" uid="uid://d0d5gah2mlsc8" path="res://Scripts/Camera.gd" id="3_dle53"]
+
+[node name="LevelBase" type="Node" unique_id=719337527]
+metadata/_edit_vertical_guides_ = [256.0]
+metadata/_edit_horizontal_guides_ = [256.0]
+
+[node name="Backdrop" type="Parallax2D" parent="." unique_id=1263441418]
+scroll_scale = Vector2(0.7, 0.7)
+repeat_size = Vector2(301.2, 301.6)
+repeat_times = 16
+
+[node name="Sprite2D" type="Sprite2D" parent="Backdrop" unique_id=504232294]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_fs2k4")
+
+[node name="Soot" parent="." unique_id=1762240322 instance=ExtResource("2_8xgkp")]
+position = Vector2(247, 163)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=61701359 node_paths=PackedStringArray("target")]
+position = Vector2(317, 189)
+zoom = Vector2(0.7, 0.7)
+script = ExtResource("3_dle53")
+target = NodePath("../Soot")

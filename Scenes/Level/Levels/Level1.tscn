@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://pd78qqv10sbs"]
+
+[ext_resource type="PackedScene" uid="uid://cke1e60nwop6f" path="res://Scenes/Level/LevelBase.tscn" id="1_42wh0"]
+[ext_resource type="Script" uid="uid://c2sgn2kmy0sd8" path="res://Scripts/Ground.gd" id="2_1xo23"]
+[ext_resource type="Texture2D" uid="uid://dlkcbmv15dfw5" path="res://Ground.png" id="2_mjguj"]
+[ext_resource type="PackedScene" uid="uid://cb7a36mcurlq6" path="res://Scenes/Konpeito/Konpeito.tscn" id="3_1xo23"]
+
+[node name="LevelBase" unique_id=719337527 instance=ExtResource("1_42wh0")]
+
+[node name="Ground" type="Polygon2D" parent="." index="3" unique_id=270954184]
+texture_repeat = 2
+texture = ExtResource("2_mjguj")
+polygon = PackedVector2Array(-56, 223, -22, 316, 118, 363, 339, 376, 538, 356, 696, 316, 762, 258, 824, 137, 826, 54, 900, -17, 1005, -36, 1158, -7, 1315, -21, 1452, -76, 1527, -171, 1566, -284, 1545, -393, 1497, -504, 1387, -566, 1270, -577, 1107, -553, 916, -481, 668, -378, 424, -304, 68, -207, -39, -56, -68, 172, -56, 223, -954, 390, -834, -936, 2476, -972, 2284, 1066, -1003, 1021, -954, 390)
+script = ExtResource("2_1xo23")
+metadata/_custom_type_script = "uid://c2sgn2kmy0sd8"
+
+[node name="Konpeito" parent="." index="4" unique_id=1668418300 instance=ExtResource("3_1xo23")]
+position = Vector2(364, 89)
+
+[node name="Konpeito2" parent="." index="5" unique_id=560631484 instance=ExtResource("3_1xo23")]
+position = Vector2(1228, -130)
+
+[node name="Konpeito3" parent="." index="6" unique_id=973844210 instance=ExtResource("3_1xo23")]
+position = Vector2(827, -200)

@@ -1,0 +1,150 @@
+[gd_scene format=3 uid="uid://dimbuvr4cq6qe"]
+
+[ext_resource type="PackedScene" uid="uid://cke1e60nwop6f" path="res://Scenes/Level/LevelBase.tscn" id="1_jlr5v"]
+[ext_resource type="Texture2D" uid="uid://dlkcbmv15dfw5" path="res://Ground.png" id="2_h0oyr"]
+[ext_resource type="Script" uid="uid://c2sgn2kmy0sd8" path="res://Scripts/Ground.gd" id="3_lg5ax"]
+[ext_resource type="Shader" uid="uid://bse1yq08xkccj" path="res://Wind.gdshader" id="4_cojeo"]
+[ext_resource type="Texture2D" uid="uid://cprlebl54lon0" path="res://Assets/Textures/Noise.tres" id="5_lmtv6"]
+[ext_resource type="Texture2D" uid="uid://csq7jxgj2p2n1" path="res://Assets/Textures/White.tres" id="6_6i81y"]
+[ext_resource type="Script" uid="uid://fdb036my2ug7" path="res://VelocityField.gd" id="7_cbtil"]
+[ext_resource type="PackedScene" uid="uid://cb7a36mcurlq6" path="res://Scenes/Konpeito/Konpeito.tscn" id="8_lg5ax"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6l64u"]
+shader = ExtResource("4_cojeo")
+shader_parameter/noise = ExtResource("5_lmtv6")
+shader_parameter/threshold = 0.715
+shader_parameter/velocity = Vector2(1.667, -1.667)
+shader_parameter/scalar = 5.0
+shader_parameter/mult = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h0oyr"]
+shader = ExtResource("4_cojeo")
+shader_parameter/noise = ExtResource("5_lmtv6")
+shader_parameter/threshold = 0.715
+shader_parameter/velocity = Vector2(1.65, 1.5)
+shader_parameter/scalar = 2.0
+shader_parameter/mult = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lg5ax"]
+shader = ExtResource("4_cojeo")
+shader_parameter/noise = ExtResource("5_lmtv6")
+shader_parameter/threshold = 0.715
+shader_parameter/velocity = Vector2(-1, -1)
+shader_parameter/scalar = 2.0
+shader_parameter/mult = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cojeo"]
+shader = ExtResource("4_cojeo")
+shader_parameter/noise = ExtResource("5_lmtv6")
+shader_parameter/threshold = 0.715
+shader_parameter/velocity = Vector2(2, 2)
+shader_parameter/scalar = 2.0
+shader_parameter/mult = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lmtv6"]
+shader = ExtResource("4_cojeo")
+shader_parameter/noise = ExtResource("5_lmtv6")
+shader_parameter/threshold = 0.715
+shader_parameter/velocity = Vector2(1.5, 1.5)
+shader_parameter/scalar = 2.0
+shader_parameter/mult = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6i81y"]
+shader = ExtResource("4_cojeo")
+shader_parameter/noise = ExtResource("5_lmtv6")
+shader_parameter/threshold = 0.715
+shader_parameter/velocity = Vector2(-1.5, -1.5)
+shader_parameter/scalar = 2.0
+shader_parameter/mult = Vector2(1, 1)
+
+[node name="LevelBase" unique_id=719337527 instance=ExtResource("1_jlr5v")]
+
+[node name="Camera2D" parent="." index="2" unique_id=61701359]
+visible = false
+
+[node name="Ground" type="Polygon2D" parent="." index="3" unique_id=273576989]
+texture_repeat = 2
+texture = ExtResource("2_h0oyr")
+polygon = PackedVector2Array(296, -187, -135, 6, -455.33905, 190.17181, -829, 405, -1752, -2718, 766, -2833, 2160, -2475, 2160, -1458, 2326, 1692, -1405, 1498, -829, 405, -135, 6, -173, 308, 10, 521, 382, 503, 698, 443, 789, 312, 764, 20, 683.2731, -56.47815, 997, -343, 1345, -722, 1489, -954, 1508, -1150, 1348, -1349, 815, -1724, 686, -2027, 335, -2174, -106, -2169, -315, -1996, -328, -1698, -221, -1546, 72, -1493, 495, -1489, 1046, -1177, 1006, -977, 810, -721, 536, -196)
+script = ExtResource("3_lg5ax")
+metadata/_custom_type_script = "uid://c2sgn2kmy0sd8"
+
+[node name="VelocityField" type="Polygon2D" parent="." index="4" unique_id=1830439439]
+material = SubResource("ShaderMaterial_6l64u")
+position = Vector2(644, -77)
+color = Color(0.8509804, 0.83137256, 0.84705883, 0.8235294)
+texture = ExtResource("6_6i81y")
+polygon = PackedVector2Array(-103, -59, -235, 59, -134, 144, 572, -620, 395, -762, -20, -120)
+script = ExtResource("7_cbtil")
+velocity = Vector2(1.667, -1.667)
+metadata/_custom_type_script = "uid://fdb036my2ug7"
+
+[node name="VelocityField2" type="Polygon2D" parent="." index="5" unique_id=1846139088]
+material = SubResource("ShaderMaterial_h0oyr")
+color = Color(0.8509804, 0.83137256, 0.84705883, 0.8235294)
+texture = ExtResource("6_6i81y")
+polygon = PackedVector2Array(1178, -1170, 1279, -1275, 1148, -1385, 1049, -1256)
+script = ExtResource("7_cbtil")
+velocity = Vector2(1.65, 1.5)
+metadata/_custom_type_script = "uid://fdb036my2ug7"
+
+[node name="VelocityField3" type="Polygon2D" parent="." index="6" unique_id=1564107450]
+material = SubResource("ShaderMaterial_lg5ax")
+position = Vector2(-206, -158)
+color = Color(0.8509804, 0.83137256, 0.84705883, 0.8235294)
+texture = ExtResource("6_6i81y")
+polygon = PackedVector2Array(1178, -1170, 1279, -1275, 1148, -1385, 1049, -1256)
+script = ExtResource("7_cbtil")
+velocity = Vector2(-1, -1)
+metadata/_custom_type_script = "uid://fdb036my2ug7"
+
+[node name="VelocityField4" type="Polygon2D" parent="." index="7" unique_id=1862826835]
+material = SubResource("ShaderMaterial_cojeo")
+position = Vector2(-410, -295)
+color = Color(0.8509804, 0.83137256, 0.84705883, 0.8235294)
+texture = ExtResource("6_6i81y")
+polygon = PackedVector2Array(1178, -1170, 1279, -1275, 1148, -1385, 1049, -1256)
+script = ExtResource("7_cbtil")
+velocity = Vector2(2, 2)
+metadata/_custom_type_script = "uid://fdb036my2ug7"
+
+[node name="VelocityField5" type="Polygon2D" parent="." index="8" unique_id=581476101]
+material = SubResource("ShaderMaterial_lmtv6")
+position = Vector2(-43, 29)
+color = Color(0.8509804, 0.83137256, 0.84705883, 0.8235294)
+texture = ExtResource("6_6i81y")
+polygon = PackedVector2Array(8, -1444, 94, -1429, 648, -2120, 579, -2177)
+script = ExtResource("7_cbtil")
+velocity = Vector2(1.5, 1.5)
+metadata/_custom_type_script = "uid://fdb036my2ug7"
+
+[node name="VelocityField6" type="Polygon2D" parent="." index="9" unique_id=117178738]
+material = SubResource("ShaderMaterial_6i81y")
+position = Vector2(-235, -67)
+color = Color(0.8509804, 0.83137256, 0.84705883, 0.8235294)
+texture = ExtResource("6_6i81y")
+polygon = PackedVector2Array(8, -1444, 94, -1429, 648, -2120, 579, -2177)
+script = ExtResource("7_cbtil")
+velocity = Vector2(-1.5, -1.5)
+metadata/_custom_type_script = "uid://fdb036my2ug7"
+
+[node name="Konpeito" parent="." index="10" unique_id=1668418300 instance=ExtResource("8_lg5ax")]
+position = Vector2(123, 355)
+
+[node name="Konpeito2" parent="." index="11" unique_id=1422293031 instance=ExtResource("8_lg5ax")]
+position = Vector2(1034, -627)
+
+[node name="Konpeito3" parent="." index="12" unique_id=532490752 instance=ExtResource("8_lg5ax")]
+position = Vector2(1364, -1050)
+
+[node name="Konpeito4" parent="." index="13" unique_id=1721681309 instance=ExtResource("8_lg5ax")]
+position = Vector2(849, -1490)
+
+[node name="Konpeito5" parent="." index="14" unique_id=1784669941 instance=ExtResource("8_lg5ax")]
+position = Vector2(91, -1662)
+
+[node name="Konpeito6" parent="." index="15" unique_id=1301127696 instance=ExtResource("8_lg5ax")]
+position = Vector2(312, -1973)
+
+[node name="Konpeito7" parent="." index="16" unique_id=1232027823 instance=ExtResource("8_lg5ax")]
+position = Vector2(-92, -1947)

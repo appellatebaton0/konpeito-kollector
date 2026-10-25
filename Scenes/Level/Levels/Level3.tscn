@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://byysq0x7opme7"]
+
+[ext_resource type="PackedScene" uid="uid://cke1e60nwop6f" path="res://Scenes/Level/LevelBase.tscn" id="1_263vg"]
+[ext_resource type="Texture2D" uid="uid://dlkcbmv15dfw5" path="res://Ground.png" id="2_2d50n"]
+[ext_resource type="Script" uid="uid://c2sgn2kmy0sd8" path="res://Scripts/Ground.gd" id="2_5gt6m"]
+[ext_resource type="PackedScene" uid="uid://cb7a36mcurlq6" path="res://Scenes/Konpeito/Konpeito.tscn" id="4_fgcx2"]
+
+[node name="LevelBase" unique_id=719337527 instance=ExtResource("1_263vg")]
+
+[node name="Ground" type="Polygon2D" parent="." index="3" unique_id=270954184]
+texture_repeat = 2
+texture = ExtResource("2_2d50n")
+polygon = PackedVector2Array(428, 452, 56, 456, -260, 216, -304, 12, -344, -407, -219, -700, -6, -851, 301, -980, 896, -1143, 1176, -1147, 1622, -1114, 1867, -940, 2102, -598, 2111, -202, 1920, 69, 1564, 341, 1150, 483, 866, 492, 428, 452, 388, 1144, 3357, 1349, 3172, -1830, -1256, -1698, -1320, 1149, 388, 1144)
+script = ExtResource("2_5gt6m")
+metadata/_custom_type_script = "uid://c2sgn2kmy0sd8"
+
+[node name="Ground2" type="Polygon2D" parent="." index="4" unique_id=1737646176]
+texture_repeat = 2
+texture = ExtResource("2_2d50n")
+polygon = PackedVector2Array(-11, 38, -102, -53, -142, -227, -90, -346, 45, -389, 167, -342, 250, -252, 277, -103, 203, 3, 93, 59)
+script = ExtResource("2_5gt6m")
+metadata/_custom_type_script = "uid://c2sgn2kmy0sd8"
+
+[node name="Ground3" type="Polygon2D" parent="." index="5" unique_id=843068171]
+texture_repeat = 2
+position = Vector2(334.00003, -715)
+rotation = 1.768474
+texture = ExtResource("2_2d50n")
+polygon = PackedVector2Array(-11, 38, -102, -53, -142, -227, -90, -346, 45, -389, 167, -342, 250, -252, 277, -103, 203, 3, 93, 59)
+script = ExtResource("2_5gt6m")
+metadata/_custom_type_script = "uid://c2sgn2kmy0sd8"
+
+[node name="Ground4" type="Polygon2D" parent="." index="6" unique_id=1058274487]
+texture_repeat = 2
+position = Vector2(966.99994, -684)
+rotation = 0.4218347
+texture = ExtResource("2_2d50n")
+polygon = PackedVector2Array(-11, 38, -102, -53, -142, -227, -90, -346, 45, -389, 167, -342, 250, -252, 277, -103, 203, 3, 93, 59)
+script = ExtResource("2_5gt6m")
+metadata/_custom_type_script = "uid://c2sgn2kmy0sd8"
+
+[node name="Ground5" type="Polygon2D" parent="." index="7" unique_id=2087160662]
+texture_repeat = 2
+position = Vector2(519, 116.99997)
+rotation = 1.042499
+texture = ExtResource("2_2d50n")
+polygon = PackedVector2Array(-11, 38, -102, -53, -142, -227, -90, -346, 45, -389, 167, -342, 250, -252, 277, -103, 203, 3, 93, 59)
+script = ExtResource("2_5gt6m")
+metadata/_custom_type_script = "uid://c2sgn2kmy0sd8"
+
+[node name="Ground6" type="Polygon2D" parent="." index="8" unique_id=1917628230]
+texture_repeat = 2
+position = Vector2(1202, 23.999985)
+rotation = -0.102290094
+texture = ExtResource("2_2d50n")
+polygon = PackedVector2Array(-11, 38, -102, -53, -142, -227, -90, -346, 45, -389, 167, -342, 250, -252, 277, -103, 203, 3, 93, 59)
+script = ExtResource("2_5gt6m")
+metadata/_custom_type_script = "uid://c2sgn2kmy0sd8"
+
+[node name="Ground7" type="Polygon2D" parent="." index="9" unique_id=95419536]
+texture_repeat = 2
+position = Vector2(1779.0001, -471.99994)
+rotation = -1.205914
+texture = ExtResource("2_2d50n")
+polygon = PackedVector2Array(-11, 38, -102, -53, -142, -227, -90, -346, 45, -389, 167, -342, 250, -252, 277, -103, 203, 3, 93, 59)
+script = ExtResource("2_5gt6m")
+metadata/_custom_type_script = "uid://c2sgn2kmy0sd8"
+
+[node name="Konpeito" parent="." index="10" unique_id=1668418300 instance=ExtResource("4_fgcx2")]
+position = Vector2(193, 274)
+
+[node name="Konpeito2" parent="." index="11" unique_id=847397638 instance=ExtResource("4_fgcx2")]
+position = Vector2(477, -216)
+
+[node name="Konpeito3" parent="." index="12" unique_id=1173151633 instance=ExtResource("4_fgcx2")]
+position = Vector2(761, -929)
+
+[node name="Konpeito4" parent="." index="13" unique_id=2014886375 instance=ExtResource("4_fgcx2")]
+position = Vector2(1622, -869)
+
+[node name="Konpeito5" parent="." index="14" unique_id=1854113753 instance=ExtResource("4_fgcx2")]
+position = Vector2(1780, -131)
+
+[node name="Konpeito6" parent="." index="15" unique_id=338488797 instance=ExtResource("4_fgcx2")]
+position = Vector2(1075, 201)
+
+[node name="Konpeito7" parent="." index="16" unique_id=1114777812 instance=ExtResource("4_fgcx2")]
+position = Vector2(-130, -499)
